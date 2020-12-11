@@ -1,0 +1,86 @@
+<div class="navigation">
+  <nav class="d-flex justify-content-between nav">
+    <input
+      class="nav__checkbox" 
+      type="checkbox" 
+      id="checkbox" 
+    >
+    <label
+      class="nav__button" 
+      for="checkbox">
+        <span class="nav__button-line"></span>
+        <span class="nav__button-line"></span>
+        <span class="nav__button-line"></span>
+    </label>
+    <ul class="col-xl-7 col-lg-8 col-9 d-flex justify-content-between mb-0 nav__list">
+      <!-- routerLink - Директива для определения адреса ссылки -->
+      <!-- routerLinkActive - Специальная директива для стилизации активных ссылок -->
+      <!-- routerLinkActiveOptions - Специальная директива для доп настроек, что бы URL ссылок не совпадали, так как у первой можно 
+      свести к любой другой, {exact:true} - указывает на то что для установки активной ссылки будет применятся полное соответствие-->
+      <li 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact:true}"
+        >
+        <a routerLink="">
+          Главная
+        </a> 
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/stock">
+          Акции
+        </a> 
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/goods">
+          Товары
+        </a> 
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/payment">
+          Доставка
+        </a> 
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/wholesale">
+          Оптом
+        </a> 
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/question">
+          Вопросы
+        </a> 
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/contact">
+          Контакты
+        </a>
+      </li>
+    </ul>
+    <div 
+      class="col-xl-1 col-md-2 col-sm-3 col-5 d-flex justify-content-center basket" 
+      routerLinkActive="active"
+      >
+      <a 
+        class="button fancy-button"
+        routerLink="/cart"
+        >
+        Корзина
+      </a>
+      <small>
+        <span
+          *ngIf="cartService.goodsCount > 0"
+          >
+          {{ cartService.goodsCount }}
+        </span>
+        <span 
+          *ngIf="cartService.goodsCount == 0"
+          >
+          0
+        </span>
+      </small>
+    </div>
+  </nav>
+  <!-- <div [@routerAnimations]="getState(routerOutlet)">
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+  </div> -->
+</div>

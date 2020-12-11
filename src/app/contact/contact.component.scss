@@ -1,0 +1,43 @@
+.wrap {
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
+.contact {
+    text-align: start;
+    font-size: 1.2rem;
+    h3 {
+        margin-bottom: 2rem;
+    }
+    ul {
+        margin-bottom: 2rem;
+    }
+}
+iframe {
+    height: 70vh;
+}
+.mapouter {
+    position: relative;
+    text-align: right;
+}
+.gmap_canvas {
+    overflow: hidden;
+    background: none!important;
+}
+///////////////////Media
+@media(max-width: 1060px){
+    h3 {
+        font-size: 1.35rem;
+    }
+    .contact {
+        font-size: .9rem;
+
+        h3 {
+            margin-bottom: 1rem;
+        }
+    }
+}
+@media(max-width: 768px){
+    .contact {
+        padding: 0;
+    }
+}

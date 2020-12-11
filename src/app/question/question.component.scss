@@ -1,0 +1,21 @@
+.guestion {
+    h3 {
+        padding: 2rem 0;
+    }
+}
+///////////////////Media
+@media(max-width: 767px){
+    .guestion {
+        h3 {
+            padding: 1rem 0;
+            font-size: 1.2rem;
+        }
+    }
+}
+@media(max-width: 569px){
+    .guestion {
+        h3 {
+            font-size: 1rem;
+        }
+    }
+}

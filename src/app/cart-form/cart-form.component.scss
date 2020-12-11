@@ -1,0 +1,73 @@
+input.ng-dirty.ng-invalid { border: 2px solid var(--primary3-color) }
+input.ng-dirty.ng-valid { border: 2px solid var(--primary4-color) }
+.forms__order {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Lato', sans-serif;
+    fieldset {
+        border: 2px solid var(--primary4-color);
+        border-radius: .7rem;
+        padding: 2rem;
+    }
+}
+.form-group {
+    display: block;
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+    label {
+        display: block;
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: .5rem;
+    }
+    input {
+        margin-bottom: 0;
+        &.ng-invalid.ng-touched {
+            border: 1px solid var(--primary-color);
+        }
+        &.ng-valid.ng-touched {
+            border: 1px solid var( --primary4-color);
+        }
+    }  
+    .validation {
+        color: red;
+    }
+}
+.btn {
+    margin: 1rem 1rem 0 0 ;
+}
+.checkout__form {
+    text-align: center;
+    h2 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 2rem;
+    }
+}
+///////////////////Media
+@media(max-width: 569px){
+    legend {
+        font-size: 1rem;
+    }
+    .form-group {
+        label, input {
+            font-size: .85rem;
+        }
+    }
+    .btn {
+        font-size: .85rem;
+    }
+}
+
+@media(max-width: 496px){
+    .checkout__form {
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }

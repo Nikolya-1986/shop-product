@@ -1,0 +1,111 @@
+<div class="d-flex justify-content-between flex-wrap p-0 mb-1 categor">
+    <div class="col-md-3 col-sm-5 col-6 form-group pl-0">
+        <label for="category">
+            Категории товаров
+        </label>
+        <select 
+            id="category" 
+            class="form-control mb-0" 
+            [(ngModel)]="filterCategory" 
+            >
+            <option value="">
+                Все категории
+            </option>
+            <option 
+                *ngFor="let item of categories" 
+                [value]="item"
+                >
+                {{ item }}
+            </option>
+        </select>
+    </div>
+    <div class="col-md-3 col-sm-5 col-6 form-group p-0">
+        <label for="parameters">
+            Сортировать по
+        </label>
+        <select 
+            class="form-control" 
+            id="parameters"
+            [(ngModel)]="filterParameters"
+            >
+            <option
+                *ngFor="let item of allFilter"
+                [value]="item"
+                >
+                {{ item }}
+            </option>
+        </select>
+    </div>
+    <div class="col-md-4 col-8 form-group sort__title p-0">
+        <label for="searchTitle">
+            Поиск товара
+        </label>
+        <input 
+            id="searchTitle"
+            class="form-control mb-0 search" 
+            placeholder="Введите товар для поиска..." 
+            type="text"
+            [(ngModel)]="searchStr"
+        >
+    </div>
+</div>
+<div class="col-12 d-flex justify-content-end flex-wrap pr-0 pagination">
+    <div class="form-group btn-group view">
+        <label>
+            Вид товаров
+        </label>
+        <button class="btn btn-default">
+            <span 
+                class="material-icons"
+                (click)="view = 'card'"
+                >
+                credit_card
+            </span>
+        </button>
+        <button class="btn btn-default">
+            <span 
+                class="material-icons"
+                (click)="view = 'table'"
+                >
+                table_chart
+            </span>
+        </button>
+    </div>
+    <div class="form-group d-flex align-items-center paginat">
+        <label class="m-0" for="exampleFormControlSelect2">
+            Показать товаров
+        </label>
+        <select 
+            class="form-control m-0" 
+            id="exampleFormControlSelect2"
+            (change)="handlePageSizeChange($event)"
+            >
+            <option
+                *ngFor="let size of pageSizes"
+                [ngValue]="size"
+                >
+                {{ size }}
+            </option>
+        </select>
+    </div>
+    <pagination-controls
+        previousLabel="Назад"
+        nextLabel="Вперёд"
+        responsive="true"
+        (pageChange)="handlePageChange($event)"
+        >
+    </pagination-controls>
+</div>
+<div class="goods__show">
+    <app-goods-show
+        [goods]="goods"
+        [filterCategory]="filterCategory"
+        [filterParameters]="filterParameters"
+        [view]="view"
+        [searchStr]="searchStr"
+        [pageSize]="pageSize"
+        [page]="page"
+        [currentIndex]="currentIndex"
+        >
+    </app-goods-show>
+</div>

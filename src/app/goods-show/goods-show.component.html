@@ -1,0 +1,149 @@
+<div 
+    class="d-flex column"
+    [ngSwitch]="view"
+    >
+    <ng-template 
+        ngSwitchCase="card"
+        >
+        <div class="col-12 d-flex justify-content-around flex-wrap goods__card" >
+            <div 
+                class="text-center card pt-0" 
+                *ngFor="let item of goods
+                | searchString: searchStr  
+                | categoryFilter: filterCategory
+                | paginate: {
+                    itemsPerPage: pageSize,
+                    currentPage: page,
+                    totalItems: count
+                }
+                | sortGoods: filterParameters;
+                let i = index"
+                [class.active]="i == currentIndex"
+                >
+                <div class="card-header p-0 card__img">
+                    <img src="{{ item?.images }}">
+                    <div
+                        *ngIf="item?.superPrice" 
+                        class="card__superWraper"
+                        >
+                        <div class="card__super">
+                            {{ item?.superPrice }}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body pt-0 pb-0">
+                    <h2 class="card-title">
+                        {{ item.title }}
+                    </h2>
+                    <p class="card-text card__description">
+                        {{ item?.discription }}
+                    </p>
+                    <span class="card-text card__price">
+                        {{ item?.price | currency:"USD":true:"1.2-2" }}
+                    </span>
+                </div>
+                <div class="card-footer card__button">
+                    <button 
+                        class="btn btn-success"
+                        [routerLink]="['/goods', item.id]" 
+                        >
+                        Подробнее о товаре
+                    </button>
+                    <button 
+                        class="btn btn-danger" 
+                        (click)="addGoodsToCart(item)"
+                        >
+                        Добавить в корзину
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+    <ng-template 
+        ngSwitchCase="table"
+        >
+        <div class="table-responsive goods__table">
+            <table class="col-12 table table-hover table-dark table-bordered table-sm text-center">
+                <thead>
+                    <tr class="bg-primary">
+                    <th>
+                        №
+                    </th>
+                    <th>
+                        Название товара
+                    </th>
+                    <th>
+                        Описание товара
+                    </th>
+                    <th>
+                        Цена товара
+                    </th>
+                    <th>
+                        Подробнее о товаре
+                    </th>
+                    <th>
+                        Добавить в корзину
+                    </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr  
+                        *ngFor="let item of goods
+                        | searchString: searchStr  
+                        | categoryFilter: filterCategory
+                        | paginate: {
+                            itemsPerPage: pageSize,
+                            currentPage: page,
+                            totalItems: count
+                        }
+                        | sortGoods: filterParameters;
+                        let i = index"
+                        [class.active]="i == currentIndex"
+                        [ngClass]="{
+                            'bg-succes': item?.price < 6,
+                            'bg-info': item?.price >= 6,
+                            'bg-danger': item?.price >= 12
+                        }"
+                        >
+                        <td
+                            [textContent]="i + 1"
+                            >
+                        </td>
+                        <td>
+                            {{ item?.title }}
+                        </td>
+                        <td>
+                            {{ item?.discription }}
+                        </td>
+                        <td>
+                            {{ item?.price | currency:"USD":true:"1.2-2" }}
+                            <span
+                                *ngIf="item?.superPrice"
+                                [style.color]="color"
+                                >
+                                ({{ item.superPrice }})
+                          </span>
+                        </td>
+                        <td>
+                            <button 
+                                class="btn btn-success"
+                                [routerLink]="['/goods', item.id]" 
+                                >
+                                <img src="../../assets/image/iconfinder_details.png">
+                            </button>
+                        </td>
+                        <td>
+                            <button 
+                                class="btn btn-danger" 
+                                (click)="addGoodsToCart(item)"
+                                >
+                                <img src="../../assets/image/iconfinder_basket.png">
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-template>
+</div>

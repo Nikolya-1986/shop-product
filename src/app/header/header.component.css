@@ -1,0 +1,20 @@
+.additionallys {
+  padding: 10px 0;
+}
+
+.logo img {
+  width: 20vh;
+}
+
+.additionally img {
+  float: left;
+}
+
+.additionally__item img {
+  margin-right: 10px;
+}
+
+.additionally__item span {
+  font-weight: bold;
+}
+/*# sourceMappingURL=header.component.css.map */

@@ -1,0 +1,109 @@
+<h2>{{ title }}</h2>
+
+<div class="table-responsive">
+  <div 
+    *ngIf="cartService.goodsCart.length == 0"
+    >
+    <h1> 
+      Ваша корзина пуста
+    </h1>
+    <button 
+      type="button" 
+      class="btn btn-warning" 
+      (click)="goToGoods()"
+      >
+      Выбрать товары
+    </button>
+  </div>
+  <table 
+    class="table table-hover table-dark table-bordered table-sm text-center"
+    *ngIf="cartService.goodsCart.length > 0" 
+    >
+    <thead>
+      <tr class="bg-success">
+        <th>
+          №
+        </th>
+        <th>
+          Наименование товара
+        </th>
+        <th>
+          Краткое описание
+        </th>
+        <th>
+          Стоимость товара
+        </th>
+        <th>
+          Количество товара
+        </th>
+        <th>
+          Итого
+        </th>
+        <th>
+           Удалить
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let item of cartService.goodsCart; let ind = index"
+        (mouseover)="selectedGoods = item.goods.title"
+        [class.bg-info]="getSelected(item)"
+        > <!-- selectedGoods создана при первом срабатывании привязки события, тк JS умеет определять ссобытия для объектов динамически -->
+        <td>
+          {{ ind+1 }}
+        </td>
+        <td>
+          {{ item.goods.title }}
+        </td>
+        <td>
+          {{ item.goods.discription }}
+        </td>
+        <td>
+          {{ item.goods.price | currency:"USD":true:"1.2-2" }}
+        </td>
+        <td class="d-flex justify-content-center">
+          <input type="number" 
+            class="form-control mb-0 w-5 text-center" 
+            [value]="item.quantity" 
+            (change)="cartService.updateQuantity(item.goods, $event.target.value)"
+            min="0" 
+          />
+        </td>
+        <td>
+          {{ (item.lineTotal) | currency:"USD":true:"1.2-2" }}
+        </td>
+        <td class="text-xs-center">
+          <button 
+            class="btn btn-sm btn-danger" 
+            (click)="cartService.removeCart(item.goods.id)"
+            >
+            <i class="fa fa-trash-o fa-lg"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td 
+          [attr.colspan]="colspan()"
+          >
+          Не забудьте оставить доставщику на чай или кофе
+        </td>
+        <td colspan="1">
+          Итого к оплате:
+        </td>
+        <td colspan="1">
+          {{ cartService.goodsPrice | currency:"USD":true:"1.2-2" }}
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+<div 
+  class="bg-info"
+  *ngIf="cartService.goodsCart.length > 0"
+  >
+  Название товара: {{ selectedGoods || '(Товар не выбран)' }}
+</div>
+<app-cart-form></app-cart-form>

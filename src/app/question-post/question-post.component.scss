@@ -1,0 +1,14 @@
+.hover-cursor {
+    cursor: pointer;
+}
+small {
+    color: var(--primary3-color);
+}
+///////////////////Media
+@media(max-width: 767px){
+    table {
+        thead, tbody {
+            font-size: .8rem;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<div class="table-responsive">
+    <table class="table table-hover table-dark table-bordered table-sm text-center">
+        <thead>
+            <tr class="bg-primary">
+                <th>
+                    №
+                </th>
+                <th>
+                    Вопрос
+                </th>
+                <th>
+                    Ответ
+                </th>
+                <th>
+                    Длина
+                </th>
+            </tr>
+        </thead>
+      <tbody>
+      <!-- Если не оброрачивать в [] то значение переменной будет баиндиться и будет всегда строковое -->
+            <tr 
+                class="bg-secondary" 
+                appStyle fontWeight="bolder"
+                *ngFor="let question of questions
+                let i=index; let odd = odd"
+                [class.bg-info]="!odd"
+                [class.bg-primary]="odd"
+                >
+                <td
+                    [style.fontSize]="fontSize"
+                    >
+                    {{ i + 1 }}
+                </td>
+                <td>
+                    {{ question.title }}
+                </td>
+                <td>
+                    <span 
+                        *ngIf="question.answer;
+                        else notAnswer"
+                        >
+                        {{ question.answer }}
+                    </span>
+                    <ng-template
+                        #notAnswer
+                        >
+                        Данный вопрос находится на обработке
+                    </ng-template>
+                </td>
+                <td>
+                    <strong
+                        *ngIf="question.title.length > 20; 
+                        else short"
+                        >
+                        Вопрос длинный
+                    </strong>
+                    <ng-template 
+                        #short
+                        >
+                        <strong>
+                            Вопрос короткий
+                        </strong>
+                    </ng-template>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

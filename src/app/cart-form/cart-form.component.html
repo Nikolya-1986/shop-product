@@ -1,0 +1,129 @@
+<div 
+    class="m-a-1 text-xs-center checkout__form"
+    *ngIf="orderSent" 
+    >
+    <h2> 
+      Спасибо!
+    </h2>
+    <p>
+      Спасибо за ваш заказ.
+    </p>
+    <p>
+      В ближайщее время наш менеджер свяжется с вами по указанному телефону и договориться о времени доставки
+    </p>
+    <button 
+        class="btn btn-primary" 
+        routerLink="/"
+        >
+        На главную страницу
+    </button>
+</div>
+
+<div 
+    *ngIf="cartService.goodsCart.length > 0"
+    >
+    <form 
+        class="m-a-1 forms__order"
+        #formCart="ngForm"
+        novalidate
+        (ngSubmit)="submitOrder(formCart)"
+        *ngIf="!orderSent"
+        >
+        <fieldset>
+            <legend class="text-right">
+                 Форма регистрации
+            </legend>
+            <div class="form-group">
+                <label>
+                    Введите ваше имя
+                </label>
+                <input 
+                    class="form-control" 
+                    #name="ngModel" 
+                    name="name" 
+                    [(ngModel)]="order.name" 
+                    required 
+                />
+                <div 
+                    class="text-danger"
+                    *ngIf="submitted && name.invalid" 
+                    >
+                        Пожалуйста, введите свое имя
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Ведите ваш адресс
+                </label>
+                <input 
+                    class="form-control" 
+                    #address="ngModel" 
+                    name="address" 
+                    [(ngModel)]="order.address" 
+                    required 
+                />
+                <span 
+                    class="text-danger"
+                    *ngIf="submitted && address.invalid" 
+                    >
+                        Пожалйства, введите ваш адрес
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Введите ваш город
+                </label>
+                <input 
+                    class="form-control" 
+                    #city="ngModel" 
+                    name="city" 
+                    [(ngModel)]="order.city" 
+                    required
+                />
+                <span
+                    class="text-danger" 
+                    *ngIf="submitted && city.invalid"
+                    >
+                        Пожалйста, введите ваш город
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    Вевиде ваш телефон
+                </label>
+                <input 
+                    class="form-control" 
+                    #telephone="ngModel" 
+                    name="telephone" 
+                    [(ngModel)]="order.telephone" 
+                    required 
+                />
+                <span 
+                    class="text-danger"
+                    *ngIf="submitted && telephone.invalid" 
+                    >
+                        Пожалуста, введите ваш телефон
+                </span>
+            </div>
+
+            <div class="text-xs-center">
+                <button 
+                    class="col-sm-6 col-12 btn btn-success" 
+                    routerLink="/cart" 
+                    routerLink="/goods"
+                    >
+                    Вернуться к покупкам
+                    </button>
+                <button 
+                    class="col-sm-4 col-12 btn btn-primary" 
+                    type="submit"
+                    >
+                    Заказать
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-between mb-2 p-0">
+  <div class="col-2 logo pl-0">
+      <a routerLink="">
+          <img [src]="logo">
+      </a>
+  </div>
+  <div class="col-10 d-flex pr-0 additionallys">
+      <div 
+          class="col-3"
+          *ngFor="let item of additionallys"
+          >
+          <img class="mr-2" [src]="item.picture"> <!-- баиндинг [src] понимает что это переменная -->
+          <p class="mb-0">
+              {{ item.title }}
+          </p>
+          <span>
+              {{ item.text }}
+          </span>
+      </div>
+  </div>
+</div>
+<app-nav></app-nav>

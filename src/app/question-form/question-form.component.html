@@ -1,0 +1,56 @@
+<!-- g-template специальный тег который при компиляции шаблона не будет появляться в дом дереве, используется на этапе разработке и если будет пустой то в нём ничего не будет -->
+<ng-template appRef></ng-template>
+<div class="form">
+    <form 
+        [formGroup]="formQuestion" 
+        (ngSubmit)="submit()"
+        >
+        <div class="form-group">
+            <input
+                class="form-control"
+                type="text"
+                placeholder="Введите текст вопроса"
+                formControlName="title"
+                [(ngModel)]="title"
+                #titleInput
+            >
+            <div 
+                *ngIf="formQuestion.get('title').invalid && formQuestion.get('title').touched"
+                class="validation"
+                >
+                <small
+                    *ngIf="formQuestion.get('title').errors.required"
+                    >
+                    Пожалуйста заполните поле текст вопроса. Данное поле не может быть пустым!
+                </small>
+                <small
+                    *ngIf="formQuestion.get('title').errors.minlength"
+                    >
+                    Длина должна быть не менее {{ formQuestion.get('title').errors.minlength.requiredLength }} символов!
+                    Сейчас количество символов: {{ formQuestion.get('title').errors.minlength.actualLength }}.
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group d-flex mb-2">
+            <button 
+                class="col-xl-2 col-md-3 col-sm-4 col-5 btn btn-success mb-3"
+                type="submit" [disabled]="formQuestion.invalid || formQuestion.pending"
+                (click)="addQuestion(titleInput)"
+                (click)="showDialog = !showDialog"
+                >
+                Задать вопрос
+            </button>
+            <button 
+                class="col-xl-2 col-md-3 col-sm-4 col-5 btn btn-success mb-3"
+                type="button"  
+                (click)="focusTitle()"
+                >
+                Фокус Заголовка
+            </button>
+        </div>
+    </form>
+</div>
+<app-dialog [(visible)]="showDialog">
+    <h3>Спасибо за ваш вопрос. Мы обязательно его рассмотрим и дадим вам на него ответ в течении 24 часов</h3>
+</app-dialog>

@@ -1,0 +1,18 @@
+.wrap {
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.contact {
+  text-align: start;
+  font-size: 1.2rem;
+}
+
+.contact h3 {
+  margin-bottom: 2rem;
+}
+
+.contact ul {
+  margin-bottom: 2rem;
+}
+/*# sourceMappingURL=contact.component.css.map */

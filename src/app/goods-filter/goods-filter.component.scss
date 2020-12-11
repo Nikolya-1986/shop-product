@@ -1,0 +1,37 @@
+.search {
+    width: 100%;
+}
+.paginat {
+    label {
+        width: 40vh;
+    }
+}
+.btn-group {
+    padding: .5rem 0;
+}
+.btn-default {
+    padding: 0 1rem;
+    height: 1.5rem;
+}
+
+////////////////////////////@Media
+@media(max-width: 435px){
+    .pagination, .categor {
+        font-size: .85rem;
+        select {
+            font-size: .8rem;
+            option {
+                font-size: .8rem;
+            }
+        }
+        input {
+            font-size: .8rem;
+        }
+    }
+    .paginat {
+        label {
+            width: 30vh;
+        }
+    }
+}
+

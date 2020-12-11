@@ -1,0 +1,9 @@
+div {
+    color: var(--light-color);
+}
+///////////////////Media
+@media(max-width: 575px){
+    div {
+      font-size: .85rem;
+    }
+}

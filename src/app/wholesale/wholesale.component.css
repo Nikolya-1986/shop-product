@@ -1,0 +1,51 @@
+.forms {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Lato', sans-serif;
+}
+
+.form-controls {
+  display: block;
+  margin-top: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.form-controls label {
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+.form-controls input {
+  margin-bottom: 0;
+}
+
+.form-controls input.ng-invalid.ng-touched {
+  border: 1px solid var(--primary-color);
+}
+
+.form-controls input.ng-valid.ng-touched {
+  border: 1px solid var(--primary4-color);
+}
+
+.form-controls .validation {
+  color: red;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid var(--primary4-color);
+  margin: 0.5rem 0;
+}
+
+.card h2 {
+  padding: 0;
+  color: var(--primary-color);
+}
+
+.btn {
+  margin: 0.3rem 0;
+}
+/*# sourceMappingURL=wholesale.component.css.map */

@@ -1,0 +1,75 @@
+.delivery {
+    font-family: 'Monserat', sans-serif;
+    margin-bottom: 2rem;
+    h4, h3, h1 {
+        padding-top: 2rem;
+    }
+    img {
+        cursor: pointer;
+    }
+}
+.payment {
+    font-family: 'Monserat', sans-serif;
+    h1 {
+        margin-bottom: 2rem;
+    }
+    span {
+        font-weight: bold;
+    }
+    ul {
+        li {
+            margin: 1rem 0;
+        }
+    }
+}
+.btn {
+    margin-top: 0.8rem;
+}
+///////////////////Media
+@media(max-width: 550px){
+    .delivery {
+        margin-bottom: 2rem;
+        h4, h3, h1 {
+            padding-top: 2rem;
+        }
+        h1 {
+            font-size: 1.5rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+        }
+        img {
+            width: 40%;
+        }
+        p {
+            font-size: .8rem;
+        }
+    }
+    .payment {
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        span {
+            font-weight: bold;
+        }
+        ul {
+            li {
+                margin: 0.5rem 0;
+                font-size: 0.8rem;
+            }
+        }
+        p, span {
+            font-size: .8rem;
+        }
+        button {
+            padding: 0.2rem;
+        }
+    }
+    .text {
+        font-size: .8rem;
+    }
+}

@@ -1,0 +1,72 @@
+.forms {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    font-family: 'Lato', sans-serif;
+}
+.form-controls {
+    display: block;
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+    label {
+        display: block;
+        font-weight: bold;
+        font-size: 1rem;
+        margin-bottom: .5rem;
+    }
+    input {
+        margin-bottom: 0;
+        &.ng-invalid.ng-touched {
+            border: 1px solid var(--primary-color);
+        }
+        &.ng-valid.ng-touched {
+            border: 1px solid var( --primary4-color);
+        }
+    }  
+    .validation {
+        color: var(--primary3-color);
+    }
+}
+.card {
+    padding: 1rem;
+    border:1px solid var(--primary4-color);
+    margin: 0.5rem 0;
+    h2 {
+        padding: 0;
+        color: var(--primary-color);
+    }
+}
+.btn {
+    margin: 0.3rem 0;
+}
+///////////////////Media
+@media(max-width: 567px){
+    h3 {
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    .form-controls {
+        label {
+            font-size: .8rem;
+            margin-bottom: .5rem;
+        }
+        input {
+            margin-bottom: 0;
+            font-size: 1rem;
+            &.ng-invalid.ng-touched {
+                border: 1px solid var(--primary-color);
+            }
+            &.ng-valid.ng-touched {
+                border: 1px solid var( --primary4-color);
+            }
+        }  
+        select {
+            font-size: 1rem;
+            option {
+                font-size: 1rem;
+            }
+        }
+    }
+}

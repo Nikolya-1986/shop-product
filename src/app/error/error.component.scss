@@ -1,0 +1,25 @@
+.error {
+    background: url(../../assets/image/error.jpg) no-repeat center;
+    background-size: contain;
+    height: 100vh;
+}
+.btn-danger {
+    margin: 2rem 0;
+    padding: .6rem;
+} 
+///////////////////Media
+@media(max-width: 575px){
+    .error {
+        height: 80vh;
+
+        button {
+            font-size: .85rem;
+        }
+    }
+}
+
+@media(max-width: 400px){
+    .error {
+        height: 75vh;
+    }
+}

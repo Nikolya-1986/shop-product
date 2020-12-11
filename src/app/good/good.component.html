@@ -1,0 +1,37 @@
+<h2>{{ header }}</h2>
+<div>
+    <button 
+        type="button" class="btn btn-info"
+        routerLink="/goods"
+        >
+        Назад
+    </button>
+    <h1>
+        Наш девиз: {{ statisticalInformation }}
+    </h1>
+    <div class="d-flex justify-content-between details">
+        <ul>
+            <li>
+                Название товара: {{ good.title }}
+            </li>
+            <!-- <li>
+                Категория товара: {{ good.category }}
+            </li> -->
+            <li>
+                Шрих код товара: {{ goodId }}
+            </li>
+            <li>
+                Описание товара: {{ good.discription }}
+            </li>
+            <li>
+                Особенности товара: {{ good.details }}
+            </li>
+            <li>
+                Стоимость товара: {{ good.price | currency:"USD":true:"1.2-2" }}
+            </li>
+        </ul>
+        <p>
+            {{ good.images }}
+        </p>
+    </div>
+</div>

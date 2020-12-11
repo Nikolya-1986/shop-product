@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+    --primary-color: #dc3545;
+    --primary3-color: #ff0000;
+    --primary2-color:rgb(38, 0, 255);
+    --primary4-color: #00ff40;
+    --primary5-color:rgb(81, 0, 148);
+    --primary6-color:rgb(251, 255, 2);
+    --dark-color: #333333;
+    --dark2-color: gray;
+    --dark3-color: rgb(0, 0, 0);
+    --light-color: #ffffff;
+    --transparent-color: rgba(0, 0, 0, 0.582);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background: white;
+    color: var(--dark-color);
+}
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--dark-color) transparent;
+    
+    &:hover {
+        color: (--primary-color);
+    }
+}
+ul {
+    list-style: none;
+}
+input {
+    display: block;
+    width: 100%;
+    padding: 4rem;
+    font-size: 1.2rem;
+    outline: none;
+    margin-bottom: 0.5rem;
+}
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.btn {
+    display: inline-block;
+    background: var(--light-color);
+    color: var(--dark-color);
+    padding: 0.4rem 1.3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity .2s;
+
+    &:disabled {
+        background: var(--transparent-color);
+        color: var(--light-color);
+        cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+        opacity: .8;
+    }
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+}
+.text-center {
+    text-align: center;
+}
+input, select, textarea {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid var(--dark2-color);
+    margin-bottom: 1rem;
+}
+footer {
+    margin: 0;
+}
