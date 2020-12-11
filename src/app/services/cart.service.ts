@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
 import { Goods } from '../model/goods.model';
 
 @Injectable({ providedIn: 'root' })
 
 export class CartService {// хранится общее количество выбранных товаров и их общая стоимость, которая будет отображаться в процессе покупки
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   public goodsCart: GoodsCart[] = [];//для хранения списка (набора) выбранных товаров в корзине
   public goodsCount: number = 0;//общее количество товаров в корзине на текущий момент
   public goodsPrice: number = 0;//Общая сумма всех товаров в корзине на текущий момент
-
+  
   getAddGoodsToCart(goods: Goods, quantity: number = 1) {//возвращает сууму товара (ОДНОГО) и его количество
     let prod = this.goodsCart.find(prod => prod.goods.id == goods.id);
     if (prod != undefined) {
