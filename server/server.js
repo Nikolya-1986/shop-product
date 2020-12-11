@@ -1,8 +1,5 @@
 const path  = require('path');//require аналог импорта, path библиотека имеет доступ к адресам 
 const express = require('express');
-const http = require('http');
-const compression = require('compression');
-
 const app = express();
 
 const srcPath = path.join(__dirname, '..', 'dist/app-shop')
