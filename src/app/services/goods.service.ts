@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 
 import { HttpClient } from '@angular/common/http';
 import { Goods } from '../model/goods.model';
@@ -8,17 +8,25 @@ import { Goods } from '../model/goods.model';
 @Injectable()
 export class HttpService {
     
-    goodsList: AngularFireList<Goods> = null
+    goodsList: AngularFireList<Goods[]> = null
+    item: AngularFireObject<Goods> = null
+    private basePath: string = '/goods'
     
     constructor(private http: HttpClient, private firebaseDB: AngularFireDatabase){ }
     
-    getGoogsList() {
-        this.goodsList = this.firebaseDB.list('goods');
-        return this.goodsList
+    getGoogsList(): AngularFireList<Goods[]> {
+        this.goodsList = this.firebaseDB.list(`${this.basePath}`);
+        return this.goodsList;
+    }
+
+    getGoodsById(key: number): AngularFireObject<Goods> {
+        const itemPath = `${this.basePath}/${key}`;
+        this.item = this.firebaseDB.object(itemPath);
+        return this.item  
     }
 
     getAllGoods(params: {}): Observable<any> {
-        return this.http.get(('/goods'), {params});
+        return this.http.get((`${this.basePath}`), {params});
     }
 }
 //Методы класса HttpClient после выполнения запроса возвращают объект Observable<any>, который определен в библиотеке RxJS ("Reactive Extensions").

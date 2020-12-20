@@ -4,21 +4,25 @@ import "rxjs/add/observable/from";
 
 import { Order } from '../model/order.model';
 import { Goods } from '../model/goods.model';
-import { HttpService } from '../services/goods.service';
+import { DataSourse } from "src/assets/data.source";
 
 @Injectable({providedIn: 'root'})
-
 export class GoodsRepository {
 
-    private goods: Goods[] = new Array<Goods>();
+    private dataSourse: DataSourse
+    private goods: Goods[]
 
-    constructor() { }
+    constructor() {
+        this.dataSourse = new DataSourse();
+        this.goods = new Array<Goods>();
+        this.dataSourse.getData().forEach(p => this.goods.push(p));
+    }
 
     getGoods(): Goods[] {//возвращает массив объектов товаров класса Goods
         return this.goods.map(p => new Goods(p.id, p.images, p.title, p.discription, p.price, p.category, p.details, p.superPrice));
     }
 
-    getGoodsById(id: number): Goods {//возвращает одинт товар
+    getGoodsById(id: number) {//возвращает одинт товар
         return this.goods.find(p => p.id === id)
     }
 

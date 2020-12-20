@@ -8,10 +8,18 @@
     <app-question-form
         (onAdd)="updateQuestion($event)"
         >
+        <input 
+            id="searchTitle"
+            class="col-xl-7 col-md-5 col-12 form-control mb-0 search" 
+            placeholder="Введите вопрос для поиска..." 
+            type="text"
+            [(ngModel)]="searchStr"
+        >   
     </app-question-form>
 
     <app-question-post
         [questions]="questions"
+        [searchStr]="searchStr"
         >
     </app-question-post>
 

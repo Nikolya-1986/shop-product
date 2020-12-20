@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="form-group d-flex mb-2">
+        <div class="form-group d-flex justify-content-between flex-wrap mb-2">
             <button 
                 class="col-xl-2 col-md-3 col-sm-4 col-5 btn btn-success mb-3"
                 type="submit" [disabled]="formQuestion.invalid || formQuestion.pending"
@@ -42,12 +42,13 @@
                 Задать вопрос
             </button>
             <button 
-                class="col-xl-2 col-md-3 col-sm-4 col-5 btn btn-success mb-3"
+                class="col-xl-2 col-md-3 col-sm-4 col-5 btn btn-success mb-3 mr-0"
                 type="button"  
                 (click)="focusTitle()"
                 >
                 Фокус Заголовка
             </button>
+            <ng-content></ng-content>
         </div>
     </form>
 </div>

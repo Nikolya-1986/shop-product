@@ -16,6 +16,7 @@ export class QuestionComponent implements OnInit {
 
   title: string = 'Ваши вопросы';
   questions: any[]
+  searchStr = ''; // поиск строки
 
   constructor(private questionsService: QuestionsService) { }
   

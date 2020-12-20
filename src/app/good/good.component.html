@@ -9,29 +9,29 @@
     <h1>
         Наш девиз: {{ statisticalInformation }}
     </h1>
-    <div class="d-flex justify-content-between details">
-        <ul>
-            <li>
-                Название товара: {{ good.title }}
-            </li>
-            <!-- <li>
-                Категория товара: {{ good.category }}
-            </li> -->
+    <div class="d-flex justify-content-between flex-wrap details">
+        <ul class="col-lg-7 col-12 p-0">
             <li>
                 Шрих код товара: {{ goodId }}
             </li>
             <li>
-                Описание товара: {{ good.discription }}
+                Название товара: {{ itemID.title }}
             </li>
             <li>
-                Особенности товара: {{ good.details }}
+                Категория товара: {{ itemID.category }}
             </li>
             <li>
-                Стоимость товара: {{ good.price | currency:"USD":true:"1.2-2" }}
+                Описание товара: {{ itemID.discription }}
+            </li>
+            <li>
+                Особенности товара: {{ itemID.details }}
+            </li>
+            <li>
+                Стоимость товара: {{ itemID.price | currency:"USD":true:"1.2-2" }}
             </li>
         </ul>
-        <p>
-            {{ good.images }}
-        </p>
+        <div class="col-lg-5 col-12 p-0 image">
+            <img [src]="itemID.images">
+        </div>
     </div>
 </div>

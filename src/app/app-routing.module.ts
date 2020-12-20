@@ -10,9 +10,9 @@ const routes: Routes = [
   { path: "", component: HomeComponent, children: [
     { path: "extra", component: HomeExtraComponent }
   ] },
-  { path: "stock", loadChildren: () => import("./stock/stock.module").then(module => module.StockModule), canActivate: [AboutGuard] },
-  { path: "goods", loadChildren: () => import("./goods/goods.module").then(module => module.GoodsModule) },
-  { path: "payment", loadChildren: () => import("./payment/payment.module").then(module => module.PaymentModule) },
+  { path: "stock", loadChildren: () => import("./stock/stock.module").then(module => module.StockModule), canActivate: [AboutGuard]},
+  { path: "goods", loadChildren: () => import("./goods/goods.module").then(module => module.GoodsModule)},
+  { path: "payment", loadChildren: () => import("./payment/payment.module").then(module => module.PaymentModule)},
   { path: "wholesale", loadChildren: () => import("./wholesale/wholesale.module").then(module => module.WholesaleModule) },
   { path: "question", loadChildren: () => import("./question/question.module").then(module => module.QuestionModule) },
   { path: "contact", loadChildren: () => import("./contact/contact.module").then(module => module.ContactModule) },

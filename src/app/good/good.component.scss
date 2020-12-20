@@ -9,7 +9,31 @@
              font-size: 1.26rem;
          }
     }
+    div {
+        img {
+            width: 100%;
+            height: 45vh;
+        }
+    }
 }
-.btn__details {
-    padding: .6rem;
+
+///////////////////Media
+@media(max-width: 768px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    .details {
+        ul {
+            margin: 1rem 0;
+             li {
+                 font-size: 1rem;
+             }
+        }
+        div {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
 }

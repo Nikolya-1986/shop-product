@@ -1,6 +1,5 @@
-import { Component, ComponentFactoryResolver, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component,  ElementRef,  ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Questions } from '../question/question.component';
 import { QuestionsService } from '../services/question.service';
 
 @Component({
@@ -36,17 +35,6 @@ export class QuestionFormComponent {
       titleInput.value = null;
     }
   }
-  // addQuestion() {
-  //   if(this.text.trim() && this.title.trim()) {
-  //     const question: Questions = {
-  //       title: this.title,
-  //       text: this.text,
-  //       answer: 'Данный вопрос находится на обработке',
-  //     }
-  //     this.onAdd.emit(question)//метод получаемый в следствии наследования, передать нужно тот объектк который будем имитить
-  //     this.title=this.text = '';//Вызвав метод emit Angular отправит в родительский компонент соответствующие данные
-  //   } 
-  // }
 
   submit() {
     if(this.formQuestion.valid) {

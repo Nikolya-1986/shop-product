@@ -16,12 +16,12 @@
                 </th>
             </tr>
         </thead>
-      <tbody>
-      <!-- Если не оброрачивать в [] то значение переменной будет баиндиться и будет всегда строковое -->
+        <tbody>
+        <!-- Если не оброрачивать в [] то значение переменной будет баиндиться и будет всегда строковое -->
             <tr 
                 class="bg-secondary" 
                 appStyle fontWeight="bolder"
-                *ngFor="let question of questions
+                *ngFor="let question of questions | searchString: searchStr 
                 let i=index; let odd = odd"
                 [class.bg-info]="!odd"
                 [class.bg-primary]="odd"

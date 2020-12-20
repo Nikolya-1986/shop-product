@@ -9,6 +9,7 @@ import { QuestionsService } from '../services/question.service';
 })
 export class QuestionPostComponent  {
 
+  @Input() searchStr: any
   @Input() questions: Questions[];
   @Output() delete = new EventEmitter<string>();
   @Output() edit = new EventEmitter<string>();
