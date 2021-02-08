@@ -8,7 +8,7 @@
         <div class="col-12 d-flex justify-content-around flex-wrap goods__card" >
             <div 
                 class="text-center card pt-0" 
-                *ngFor="let item of goods
+                *ngFor="let item of goods | async
                 | searchString: searchStr  
                 | categoryFilter: filterCategory
                 | paginate: {
@@ -89,7 +89,7 @@
                 </thead>
                 <tbody>
                     <tr  
-                        *ngFor="let item of goods
+                        *ngFor="let item of goods | async
                         | searchString: searchStr  
                         | categoryFilter: filterCategory
                         | paginate: {

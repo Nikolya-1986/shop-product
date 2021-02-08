@@ -15,4 +15,36 @@
 .contact ul {
   margin-bottom: 2rem;
 }
+
+iframe {
+  height: 70vh;
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+}
+
+@media (max-width: 1060px) {
+  h3 {
+    font-size: 1.35rem;
+  }
+  .contact {
+    font-size: .9rem;
+  }
+  .contact h3 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 0;
+  }
+}
 /*# sourceMappingURL=contact.component.css.map */

@@ -1,34 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
-import { GoodsRepository } from '../repository/goods.repository';
 import { Goods } from '../model/goods.model';
 import { HttpService } from '../services/goods.service';
 
 @Component({
   selector: 'app-good',
   templateUrl: './good.component.html',
-  styleUrls: ['./good.component.scss'],
-  providers: [HttpService]
+  styleUrls: ['./good.component.scss']
 })
 export class GoodComponent implements OnInit {
 
-  good: Goods
   header: string = 'Подробнее о товаре'
   statisticalInformation: string
   goodId: any
-  itemID
+  itemID: Goods
 
-  constructor(private activatedRoute: ActivatedRoute, private goodsRepository : GoodsRepository, private httpService: HttpService) { //activatedRoute приватный объект для взаимодействия с динамическими роутами
+  constructor(
+    private activatedRoute: ActivatedRoute, //activatedRoute приватный объект для взаимодействия с динамическими роутами
+    private httpService: HttpService) { 
     this.goodId = activatedRoute.snapshot.params["id"]//Свойство snapshot хранит состояние маршрута, а состояние маршрута содержит переданные параметры.
     this.statisticalInformation = activatedRoute.snapshot.data[0]['statInf'];
   }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params: Params) => {//activatedRoute - отвечает за текущий объект который загружен, params поле типа обзёрбл на которое можно подписаться
-      console.log(params)
-      this.itemID = this.goodsRepository.getGoodsById(+params.id)
-      console.log(this.itemID)
-    })
+    this.showGoodsID(this.activatedRoute.snapshot.params.id)
+  }
+
+  showGoodsID(id: number): void {
+    this.httpService.getGoodsById(id)
+    .subscribe(
+      good => {
+        this.itemID = good
+        console.log(this.itemID)
+      },
+      error => {
+        console.log(error)
+      }
+    ) 
   }
 }

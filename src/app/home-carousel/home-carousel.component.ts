@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { trigger, transition, useAnimation } from "@angular/animations";
 
-import { Slide } from '../home-carousel/home-carousel.inteface';
+import { Slide } from '../model/home-carousel.inteface';
 import { AnimationType, fadeIn, fadeOut, } from "../home-carousel/home-carousel.animations";
 
 @Component({

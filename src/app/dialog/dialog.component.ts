@@ -20,7 +20,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 export class DialogComponent implements OnInit {
   @Input() closable = true;//настройка окан, скрыть или показать
-  //Дляя создание настраиваемой двухсторонней привязки, для перекючения видимости
+  //Для создание настраиваемой двухсторонней привязки, для перекючения видимости
   @Input() visible: boolean;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 

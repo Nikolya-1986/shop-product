@@ -1,14 +1,22 @@
+.delivery {
+  font-family: 'Monserat', sans-serif;
+  margin-bottom: 2rem;
+}
+
+.delivery h4, .delivery h3, .delivery h1 {
+  padding-top: 2rem;
+}
+
+.delivery img {
+  cursor: pointer;
+}
+
 .payment {
-  padding: 4rem 0;
   font-family: 'Monserat', sans-serif;
 }
 
 .payment h1 {
   margin-bottom: 2rem;
-}
-
-.payment p, .payment span, .payment li {
-  font-size: 1.5rem;
 }
 
 .payment span {
@@ -20,6 +28,50 @@
 }
 
 .btn {
-  margin: 0.8rem 0;
+  margin-top: 0.8rem;
+}
+
+@media (max-width: 550px) {
+  .delivery {
+    margin-bottom: 2rem;
+  }
+  .delivery h4, .delivery h3, .delivery h1 {
+    padding-top: 2rem;
+  }
+  .delivery h1 {
+    font-size: 1.5rem;
+  }
+  .delivery h4 {
+    font-size: 1.2rem;
+  }
+  .delivery h3 {
+    font-size: 1.4rem;
+  }
+  .delivery img {
+    width: 40%;
+  }
+  .delivery p {
+    font-size: .8rem;
+  }
+  .payment h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .payment span {
+    font-weight: bold;
+  }
+  .payment ul li {
+    margin: 0.5rem 0;
+    font-size: 0.8rem;
+  }
+  .payment p, .payment span {
+    font-size: .8rem;
+  }
+  .payment button {
+    padding: 0.2rem;
+  }
+  .text {
+    font-size: .8rem;
+  }
 }
 /*# sourceMappingURL=payment.component.css.map */

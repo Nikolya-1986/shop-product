@@ -36,7 +36,7 @@ export class CartService {// хранится общее количество в
     this.sumGoodsInCart();
   } 
 
-  prod(id: number) {
+  prod(id: number) {//id одного товара
     let index = this.goodsCart.findIndex(prod => prod.goods.id == id);
     this.goodsCart.splice(index);
     this.sumGoodsInCart();

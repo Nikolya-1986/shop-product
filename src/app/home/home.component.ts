@@ -2,7 +2,7 @@ import { Component, ViewChild } from "@angular/core";
 import { AnimationType } from '../home-carousel/home-carousel.animations';
 
 import { HomeCarouselComponent } from '../home-carousel/home-carousel.component';
-import { Slide } from '../home-carousel/home-carousel.inteface';
+import { Slide } from '../model/home-carousel.inteface';
 
 @Component({
   selector: 'app-home',

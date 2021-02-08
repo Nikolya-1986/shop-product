@@ -3,7 +3,7 @@ import { QuestionsService } from '../services/question.service';
 
 export interface Questions {
   title: string,
-  answer?: string,
+  answer?: string
 }
 
 @Component({
@@ -30,6 +30,11 @@ export class QuestionComponent implements OnInit {
         this.questions.push(x);
       })
     });
+  }
+
+  onDelete($key: string){
+    console.log(`key: ${$key}`)
+    this.questionsService.removeQuestions($key);
   }
 
   updateQuestion(question: Questions) {

@@ -12,6 +12,7 @@ import { GoodComponent } from '../good/good.component';
 import { GoodsFilterComponent } from '../goods-filter/goods-filter.component';
 import { GoodsShowComponent } from '../goods-show/goods-show.component';
 import { environment } from 'src/environments/environment';
+import { HttpService } from '../services/goods.service';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { environment } from 'src/environments/environment';
         AngularFireDatabaseModule,
         AngularFireModule.initializeApp(environment.firebase),
     ],
-    exports: [ RouterModule ]
+    exports: [ RouterModule ],
+    providers: [ HttpService ]
 })
 
 export class GoodsModule { }

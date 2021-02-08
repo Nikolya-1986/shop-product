@@ -1,1 +1,6 @@
-/* No CSS *//*# sourceMappingURL=stock.component.css.map */
+.stocks {
+  background: url(../../assets/image/_development.png) no-repeat center;
+  background-size: contain;
+  height: 80vh;
+}
+/*# sourceMappingURL=stock.component.css.map */

@@ -1,4 +1,33 @@
-.btn {
-  margin: 0.5rem 1rem 0 0;
+.form label {
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+.form input {
+  margin: 0.5rem 0 0 0;
+}
+
+.form input.ng-invalid.ng-touched {
+  border: 1px solid var(--primary-color);
+}
+
+.form input.ng-valid.ng-touched {
+  border: 1px solid var(--primary4-color);
+}
+
+.form .validation {
+  color: var(--primary-color);
+}
+
+@media (max-width: 465px) {
+  .form-group input {
+    font-size: .8rem;
+  }
+  .btn {
+    padding: .3rem;
+    font-size: .8rem;
+  }
 }
 /*# sourceMappingURL=question-form.component.css.map */

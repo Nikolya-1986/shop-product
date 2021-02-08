@@ -3,18 +3,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Emilys+Candy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Source+Sans+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto+Condensed&display=swap');
-
 :root {
   --primary-color: #dc3545;
   --primary3-color: #ff0000;
   --primary2-color:rgb(38, 0, 255);
   --primary4-color: #00ff40;
-  --primary5-color:rgb(255, 0, 170);
+  --primary5-color:rgb(81, 0, 148);
+  --primary6-color:rgb(251, 255, 2);
   --dark-color: #333333;
   --dark2-color: gray;
-  --light-color: #f4f4f4;
+  --dark3-color: rgb(0, 0, 0);
+  --light-color: #ffffff;
   --transparent-color: rgba(0, 0, 0, 0.582);
 }
 
@@ -36,7 +35,7 @@ body {
 a {
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--dark-color);
+  color: var(--dark-color) transparent;
 }
 
 a:hover {
@@ -74,8 +73,8 @@ input {
 }
 
 .btn:disabled {
-  background: var(--light-color);
-  color: var(--dark-color);
+  background: var(--transparent-color);
+  color: var(--light-color);
   cursor: not-allowed;
 }
 
@@ -104,5 +103,9 @@ input, select, textarea {
   font-size: 1.2rem;
   border: 1px solid var(--dark2-color);
   margin-bottom: 1rem;
+}
+
+footer {
+  margin: 0;
 }
 /*# sourceMappingURL=styles.css.map */

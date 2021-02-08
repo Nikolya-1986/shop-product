@@ -14,12 +14,14 @@
             placeholder="Введите вопрос для поиска..." 
             type="text"
             [(ngModel)]="searchStr"
+            #infoInput
         >   
     </app-question-form>
 
     <app-question-post
         [questions]="questions"
         [searchStr]="searchStr"
+        (delete)="onDelete($event)"
         >
     </app-question-post>
 

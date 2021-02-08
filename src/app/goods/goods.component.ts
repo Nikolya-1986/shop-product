@@ -1,35 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Goods } from '../model/goods.model';
 
 import { HttpService } from '../services/goods.service';
-import { Goods } from '../model/goods.model';
 
 @Component({
   selector: 'app-goods',
   templateUrl: './goods.component.html',
   styleUrls: ['./goods.component.scss'],
-  providers: [HttpService]
 })
 
 export class GoodsComponent implements OnInit {
   
   title: string = 'Товары';
-  goodsListArray: any[];
+
+  public goodsListArray: Observable<Goods[]>;
 
   constructor(private httpService: HttpService) { }   
     
   ngOnInit(): void{
-    this.getShowGoods();
+    this.goodsListArray = this.httpService.entities$;
+    console.log(this.goodsListArray)
+    this.httpService.getGoogsList();
   }  
-
-  getShowGoods = () => {
-    this.httpService.getGoogsList().snapshotChanges()
-    .subscribe(item => {
-      this.goodsListArray = [];
-      item.forEach(element => {
-        let el = element.payload.toJSON();
-        el["$key"] = element.key;
-        this.goodsListArray.push(el)
-      })
-    })
-  }
 }

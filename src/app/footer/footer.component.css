@@ -1,0 +1,10 @@
+div {
+  color: var(--light-color);
+}
+
+@media (max-width: 575px) {
+  div {
+    font-size: .85rem;
+  }
+}
+/*# sourceMappingURL=footer.component.css.map */

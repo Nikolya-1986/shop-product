@@ -3,28 +3,19 @@ import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/from";
 
 import { Order } from '../model/order.model';
-import { Goods } from '../model/goods.model';
-import { DataSourse } from "src/assets/data.source";
+import { Goods } from "../model/goods.model";
 
 @Injectable({providedIn: 'root'})
 export class GoodsRepository {
 
-    private dataSourse: DataSourse
-    private goods: Goods[]
+    public goodID
+    constructor() { }
 
-    constructor() {
-        this.dataSourse = new DataSourse();
-        this.goods = new Array<Goods>();
-        this.dataSourse.getData().forEach(p => this.goods.push(p));
-    }
-
-    getGoods(): Goods[] {//возвращает массив объектов товаров класса Goods
-        return this.goods.map(p => new Goods(p.id, p.images, p.title, p.discription, p.price, p.category, p.details, p.superPrice));
-    }
-
-    getGoodsById(id: number) {//возвращает одинт товар
-        return this.goods.find(p => p.id === id)
-    }
+    // getGoodsById(id: number): Goods[] {//возвращает одинт товар
+    //     this.goodID = this.httpService.getGoogsList();
+    //     console.log(this.goodID)
+    //     return this.goodID.find(p => p.id === id)
+    // }
 
     getAllCategories(): string[] {
         return ['рыба', 'овощи', 'фрукты', 'мясо', 'колбасы', 'сыры', 'напитки'];

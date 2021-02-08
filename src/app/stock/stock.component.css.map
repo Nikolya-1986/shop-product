@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,OAAO,CAAC;EACJ,UAAU,EAAE,wCAAwC,CAAC,SAAS,CAAC,MAAM;EACrE,eAAe,EAAE,OAAO;EACxB,MAAM,EAAE,IAAI;CACf",
     "sources": [
         "stock.component.scss"
     ],

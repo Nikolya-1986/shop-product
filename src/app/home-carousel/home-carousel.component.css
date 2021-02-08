@@ -1,0 +1,132 @@
+.carousel {
+  position: relative;
+  height: 85vh;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.5em;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+  transition: -webkit-transform 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+  transition: transform 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+  transition: transform 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84), -webkit-transform 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+  border-radius: 0.5em;
+}
+
+.slide:hover {
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
+}
+
+.control {
+  border: none;
+  background-color: transparent;
+  outline: 0;
+  position: absolute;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5em;
+  color: var(--light-color);
+  font-weight: bold;
+  font-size: 3em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  height: 100%;
+  opacity: 80%;
+  -webkit-transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+  transition: opacity 150ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+}
+
+.control:hover, .control:focus {
+  opacity: 1;
+}
+
+.control.next {
+  right: 0;
+}
+
+.control.prev {
+  left: 0;
+}
+
+.arrow {
+  display: block;
+  border-left: 0.1em solid var(--light-color);
+  border-bottom: 0.1em solid var(--light-color);
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.arrow.left {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.arrow.right {
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+
+@media (max-width: 1069px) {
+  .carousel {
+    height: 75vh;
+  }
+}
+
+@media (max-width: 950px) {
+  .carousel {
+    height: 65vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel {
+    height: 55vh;
+  }
+}
+
+@media (max-width: 569px) {
+  .carousel {
+    height: 45vh;
+  }
+  .arrow {
+    width: 0.35em;
+    height: 0.35em;
+  }
+}
+
+@media (max-width: 475px) {
+  .carousel {
+    height: 35vh;
+  }
+  .arrow {
+    width: 0.26em;
+    height: 0.26em;
+  }
+}
+
+@media (max-width: 400px) {
+  .carousel {
+    height: 26vh;
+  }
+}
+/*# sourceMappingURL=home-carousel.component.css.map */

@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=question-post.component.css.map */
+.hover-cursor {
+  cursor: pointer;
+}
+
+small {
+  color: var(--primary3-color);
+}
+
+@media (max-width: 767px) {
+  table thead, table tbody {
+    font-size: .8rem;
+  }
+}
+/*# sourceMappingURL=question-post.component.css.map */
